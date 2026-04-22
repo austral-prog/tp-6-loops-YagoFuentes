@@ -9,7 +9,16 @@ def countdown(n):
     Ejemplo: countdown(0) -> [0]
     Ejemplo: countdown(-1) -> []
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    sting = []
+    if n == 0:
+        return [0]
+    while n > 0:
+        for x in range(n + 1):
+            sting.insert(0, x)
+            n -= 1
+
+    return sting
+
 
 
 def double_until(limit):
@@ -22,4 +31,12 @@ def double_until(limit):
     Ejemplo: double_until(1) -> [1]
     Ejemplo: double_until(0) -> []
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    sucesion = [1]
+    adicion = 1
+    if limit == 0:
+        del sucesion[0]
+        return sucesion
+    while (adicion * 2) <= limit:
+        adicion = adicion * 2
+        sucesion.append(adicion)
+    return sucesion

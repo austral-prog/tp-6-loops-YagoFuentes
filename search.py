@@ -7,7 +7,12 @@ def index_of(target, lst):
 
     Ejemplo: index_of("Black", ["Red", "Green", "Black"]) -> 2
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    longitud = len(lst)
+    if not target in lst:
+        return -1
+    for x in range(longitud):
+        if lst[x] == target:
+            return x
 
 
 def index_of_by_index(target, lst, start):
@@ -18,7 +23,18 @@ def index_of_by_index(target, lst, start):
 
     Ejemplo: index_of_by_index("Black", ["Red", "Black", "Green", "Black"], 2) -> 3
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    longitud = len(lst)
+    if not target in lst:
+        return -1
+    elif start == 0:
+        for x in range(start, longitud):
+            if lst[x] == target:
+                return x
+    elif not target in lst[start + 1:longitud]:
+        return -1
+    for x in range(start + 1, longitud):
+        if lst[x] == target:
+            return x
 
 
 def index_of_empty(lst):
@@ -28,4 +44,9 @@ def index_of_empty(lst):
 
     Ejemplo: index_of_empty(["Red", "", "Green"]) -> 1
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    longitud = len(lst)
+    if not "" in lst:
+        return -1
+    for x in range(longitud):
+        if lst[x] == "":
+            return x
